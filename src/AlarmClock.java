@@ -19,10 +19,10 @@ public class AlarmClock {
 
     public AlarmClock() {
         name = "Default clock!";
-        hours = 0;//calendar.get(Calendar.HOUR_OF_DAY);
-        minutes = 0;//calendar.get(Calendar.MINUTE);
-        seconds = 0;//calendar.get(Calendar.SECOND);
-        secondsTemp = 0;//calendar.get(Calendar.SECOND);
+        hours = calendar.get(Calendar.HOUR_OF_DAY);
+        minutes = calendar.get(Calendar.MINUTE);
+        seconds = calendar.get(Calendar.SECOND);
+        secondsTemp = calendar.get(Calendar.SECOND);
 
         hoursAlarm = minutesAlarm = secondsAlarm = 0;
         System.out.println("Current time:" + hours + ":" + minutes + ":" + seconds);
@@ -41,6 +41,7 @@ public class AlarmClock {
     }
 
     public void setCurrentTimeAutomat() {
+        calendar = Calendar.getInstance();
         hours = calendar.get(Calendar.HOUR_OF_DAY);
         minutes = calendar.get(Calendar.MINUTE);
         seconds = calendar.get(Calendar.SECOND);
